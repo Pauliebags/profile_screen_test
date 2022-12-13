@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:profile_page_redesign/edit_profile_page.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -11,30 +10,25 @@ class ProfilePage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: const BackButton(),
+        centerTitle: true,
+        title: const Text('Profile Page',
+            style: TextStyle(fontSize: 28, color: Colors.black)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 115,
-            width: 115,
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                const CircleAvatar(
-                  backgroundImage: AssetImage('assets/profile_pic.jpg'),
-                ),
-                SizedBox(
-                  height: 115,
-                  width: 115,
-                  child: SvgPicture.asset('assets/Profile_Image_Circle_Icon_Enhanced_Profile.svg'),
-                ),
-              ],
-            ),
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(50, 120, 50, 50),
+          child: Column(
+            children: [
+              SizedBox(
+                width: 180,
+                height: 150,
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: Image.network(
+                        'https://cdn-icons-png.flaticon.com/512/3135/3135715.png')),
               ),
               const SizedBox(height: 20),
               const Text('Joe Bloggs',
@@ -71,16 +65,17 @@ class ProfilePage extends StatelessWidget {
               ),
             ],
           ),
-          ),
-        ],
+        ),
       ),
       endDrawer: const NavigationDrawer(),
-    )
+    );
   }
 }
 
 /// child: Image.network(
 ///  'https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z3JleXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+
+///endDrawer: const NavigationDrawer(),
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({Key? key}) : super(key: key);
