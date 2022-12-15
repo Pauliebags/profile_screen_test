@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -11,8 +10,16 @@ class UserScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          leading: const BackButton(),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          iconTheme: const IconThemeData(color: Colors.black),
+        ),
         body: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
           child: ListView(
             shrinkWrap: true,
             children: [
@@ -27,17 +34,17 @@ class UserScreen extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               'images/Flag_Icon.svg',
-                              color: Colors.indigo,
-                              height: 50,
+                              color: Colors.redAccent,
+                              height: 70,
                               width: 70,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             SvgPicture.asset(
                               'images/Flag_Icon.svg',
-                              color: Colors.redAccent,
-                              height: 50,
+                              color: Colors.indigo,
+                              height: 70,
                               width: 70,
                             ),
                           ],
@@ -46,15 +53,15 @@ class UserScreen extends StatelessWidget {
                           height: 10,
                         ),
                         const Text(
-                          "Robin Sydnesmith",
+                          'Tobin Sydneysmith',
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                         const SizedBox(
                           height: 5,
                         ),
                         const Text(
-                          "Washington US",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300, color: Colors.black),
+                          'Washington US',
+                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300, color: Colors.black),
                         ),
                         const SizedBox(
                           height: 5,
@@ -64,7 +71,7 @@ class UserScreen extends StatelessWidget {
                           color: Colors.blue,
                           alignment: Alignment.center,
                           child: const Text(
-                            "Grade   A",
+                            'Follow   ^',
                             style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.white),
                           ),
                         )
@@ -73,9 +80,9 @@ class UserScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfile()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const EditProfile()));
                     },
-                    child: Container(
+                    child: SizedBox(
                       height: 200,
                       child: Stack(
                         children: [
@@ -88,7 +95,7 @@ class UserScreen extends StatelessWidget {
                               center: Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: ClipOval(
-                                  child: Image.asset("images/4.png"),
+                                  child: Image.asset('images/Profile Pic 2.png'),
                                 ),
                               ),
                             ),
@@ -103,7 +110,10 @@ class UserScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                   color: Colors.white, border: Border.all(color: Colors.grey), shape: BoxShape.circle),
-                              child: const Text("24"),
+                              child: const Text(
+                                '34',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ],
@@ -115,37 +125,37 @@ class UserScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: const [
                         Text(
-                          "Top 10\nTrending Story",
+                          'Top 10\nTrending Story',
                           textAlign: TextAlign.end,
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
-                          "188 reports",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
+                          '188 reports',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
-                          "682 Followers",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
+                          '682 Followers',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
-                          "11m likes",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
+                          '11m likes',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
-                          "Nov, 2021 Member",
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: Colors.grey),
+                          'Nov, 2021 Member',
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.grey),
                         ),
                       ],
                     ),
@@ -161,12 +171,12 @@ class UserScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          "Channel",
+                          'Channel',
                           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                         Spacer(),
                         Text(
-                          "Profile",
+                          'Profile',
                           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue),
                         ),
                         Spacer(
@@ -187,11 +197,11 @@ class UserScreen extends StatelessWidget {
                       thickness: 2,
                     ),
                     const Text(
-                      'If image could explain me',
+                      'If images could describe me;',
                       style: TextStyle(fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
-                    Container(
+                    SizedBox(
                       height: 150,
                       width: double.infinity,
                       child: Stack(
@@ -244,13 +254,14 @@ class UserScreen extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             'images/Facebook_icon.svg',
+                            color: Colors.blue,
                             height: 20,
                             width: 20,
                           ),
                           const SizedBox(
                             width: 10,
                           ),
-                          const Text("Facebook"),
+                          const Text('Facebook'),
                           const Spacer(),
                           Padding(
                             padding: const EdgeInsets.only(left: 4),
@@ -263,7 +274,7 @@ class UserScreen extends StatelessWidget {
                           const SizedBox(
                             width: 5,
                           ),
-                          const Text("instagram"),
+                          const Text('instagram'),
                         ],
                       ),
                     ),
@@ -273,13 +284,14 @@ class UserScreen extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             'images/Twitter_icon.svg',
+                            color: Colors.blue,
                             height: 20,
                             width: 20,
                           ),
                           const SizedBox(
                             width: 10,
                           ),
-                          const Text("Twitter"),
+                          const Text('Twitter'),
                           const Spacer(),
                           SvgPicture.asset(
                             'images/Linkedin_logo.svg',
@@ -289,7 +301,7 @@ class UserScreen extends StatelessWidget {
                           const SizedBox(
                             width: 10,
                           ),
-                          const Text("Linkedin"),
+                          const Text('Linkedin'),
                         ],
                       ),
                     ),
@@ -299,6 +311,7 @@ class UserScreen extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             'images/Youtube_icon.svg',
+                            color: Colors.red,
                             fit: BoxFit.cover,
                             height: 20,
                             width: 20,
@@ -306,7 +319,7 @@ class UserScreen extends StatelessWidget {
                           const SizedBox(
                             width: 10,
                           ),
-                          const Text("YouTube"),
+                          const Text('YouTube'),
                           const Spacer(),
                           Padding(
                             padding: const EdgeInsets.only(right: 20),
@@ -317,7 +330,7 @@ class UserScreen extends StatelessWidget {
                               width: 20,
                             ),
                           ),
-                          const Text("TikTok"),
+                          const Text('TikTok'),
                         ],
                       ),
                     ),
@@ -350,15 +363,15 @@ class UserScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
                                   Text(
-                                    "Charles",
+                                    'Charles',
                                     style: TextStyle(fontSize: 16),
                                   ),
                                   Text(
-                                    "washington",
+                                    'washington',
                                     style: TextStyle(fontSize: 13),
                                   ),
                                   Text(
-                                    "canada",
+                                    'canada',
                                     style: TextStyle(fontSize: 13),
                                   ),
                                 ],
@@ -371,7 +384,7 @@ class UserScreen extends StatelessWidget {
                                 child: Row(
                                   children: const [
                                     Text(
-                                      "Follow",
+                                      'Follow',
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     SizedBox(
@@ -395,7 +408,92 @@ class UserScreen extends StatelessWidget {
             ],
           ),
         ),
+        endDrawer: const NavigationDrawer(),
       ),
     );
   }
+}
+
+class NavigationDrawer extends StatelessWidget {
+  const NavigationDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Drawer(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              buildHeader(context),
+              buildMenuItems(context),
+            ],
+          ),
+        ),
+      );
+
+  Widget buildHeader(BuildContext context) => Container(
+        color: Colors.grey.shade500,
+        padding: EdgeInsets.only(
+          top: 24 + MediaQuery.of(context).padding.top,
+          bottom: 24,
+        ),
+        child: Column(children: const [
+          CircleAvatar(
+            radius: 52,
+            backgroundImage: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+            ),
+          ),
+          SizedBox(height: 12),
+          Text(
+            'Joe Bloggs',
+            style: TextStyle(fontSize: 28, color: Colors.white),
+          ),
+          Text(
+            'JoeBloggs@gmail.com',
+            style: TextStyle(fontSize: 16, color: Colors.white),
+          ),
+        ]),
+      );
+
+  Widget buildMenuItems(BuildContext context) => Container(
+        padding: const EdgeInsets.all(24),
+        child: Wrap(
+          runSpacing: 16,
+          children: [
+            ListTile(
+                leading: const Icon(Icons.person_outline),
+                title: const Text('Edit Profile'),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const EditProfile(),
+                  ));
+                }),
+            ListTile(
+              leading: const Icon(Icons.favorite_border),
+              title: const Text('Favourites'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.workspaces_outline),
+              title: const Text('My Upload History'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.update),
+              title: const Text('Check For Updates'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.account_tree_outlined),
+              title: const Text('Plugins'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.notifications_outlined),
+              title: const Text('Notifications'),
+              onTap: () {},
+            ),
+          ],
+        ),
+      );
 }
