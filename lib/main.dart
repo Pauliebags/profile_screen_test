@@ -3,7 +3,6 @@ import 'package:profile_page_redesign/Search.dart';
 import 'package:profile_page_redesign/WMM.dart';
 import 'package:profile_page_redesign/add_story.dart';
 import 'package:profile_page_redesign/home_screen.dart';
-import 'package:profile_page_redesign/profile_page.dart';
 import 'package:profile_page_redesign/profile_screen/user_screen.dart';
 
 void main() {
@@ -36,8 +35,8 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     const WMM(),
     const AddStory(),
     const Search(),
-   const  UserScreen(),
-   // const ProfilePage()
+    const UserScreen(),
+    // const ProfilePage()
   ];
   int selectIndex = 0;
   void onPageChanged(int index) {

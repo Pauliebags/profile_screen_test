@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
@@ -51,8 +50,8 @@ class _EditProfileState extends State<EditProfile> {
                           children: [
                             SvgPicture.asset(
                               'images/Flag_Icon.svg',
-                              color: Colors.indigo,
-                              height: 50,
+                              color: Colors.redAccent,
+                              height: 70,
                               width: 70,
                             ),
                             const SizedBox(
@@ -60,8 +59,8 @@ class _EditProfileState extends State<EditProfile> {
                             ),
                             SvgPicture.asset(
                               'images/Flag_Icon.svg',
-                              color: Colors.redAccent,
-                              height: 50,
+                              color: Colors.indigo,
+                              height: 70,
                               width: 70,
                             ),
                           ],
@@ -70,15 +69,21 @@ class _EditProfileState extends State<EditProfile> {
                           height: 10,
                         ),
                         const Text(
-                          "Robin Sydnesmith",
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
+                          'Tobin Sydneysmith',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
                         ),
                         const SizedBox(
                           height: 5,
                         ),
                         const Text(
-                          "Washington US",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300, color: Colors.black),
+                          'Washington US',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black),
                         ),
                         const SizedBox(
                           height: 5,
@@ -88,19 +93,23 @@ class _EditProfileState extends State<EditProfile> {
                           color: Colors.blue,
                           alignment: Alignment.center,
                           child: const Text(
-                            "Grade   A",
-                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.white),
+                            'Follow   ^',
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white),
                           ),
                         )
                       ],
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: 200,
                     child: Stack(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 10, right: 10, top: 50),
+                          padding: const EdgeInsets.only(
+                              left: 10, right: 10, top: 50),
                           child: CircularPercentIndicator(
                             radius: 60,
                             progressColor: Colors.brown,
@@ -109,7 +118,7 @@ class _EditProfileState extends State<EditProfile> {
                               padding: const EdgeInsets.all(10.0),
                               child: ClipOval(
                                 child: image == null
-                                    ? Image.asset("images/4.png")
+                                    ? Image.asset('images/Profile Pic 2.png')
                                     : Image.file(
                                         image!,
                                         fit: BoxFit.fill,
@@ -127,8 +136,13 @@ class _EditProfileState extends State<EditProfile> {
                             width: 30,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                                color: Colors.white, border: Border.all(color: Colors.grey), shape: BoxShape.circle),
-                            child: const Text("24"),
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey),
+                                shape: BoxShape.circle),
+                            child: const Text(
+                              '34',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ],
@@ -139,37 +153,52 @@ class _EditProfileState extends State<EditProfile> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: const [
                         Text(
-                          "Top 10\nTrending Story",
+                          'Top 10\nTrending Story',
                           textAlign: TextAlign.end,
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
-                          "188 reports",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
+                          '188 reports',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
-                          "682 Followers",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
+                          '682 Followers',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
-                          "11m likes",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey),
+                          '11m likes',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
-                          "Nov, 2021 Member",
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: Colors.grey),
+                          'Nov, 2021 Member',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey),
                         ),
                       ],
                     ),
@@ -197,8 +226,11 @@ class _EditProfileState extends State<EditProfile> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Text(
-                        follow ? "Following" : "Follow",
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                        follow ? 'Following' : 'Follow',
+                        style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
                       ),
                     ),
                   ),
@@ -215,8 +247,11 @@ class _EditProfileState extends State<EditProfile> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: const Text(
-                        "Upload Photo",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                        'Upload Photo',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
                       ),
                     ),
                   ),
@@ -248,13 +283,19 @@ class _EditProfileState extends State<EditProfile> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          "Channel",
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
+                          'Channel',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
                         ),
                         Spacer(),
                         Text(
-                          "Profile",
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue),
+                          'Profile',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
                         ),
                         Spacer(
                           flex: 2,
@@ -274,11 +315,11 @@ class _EditProfileState extends State<EditProfile> {
                       thickness: 2,
                     ),
                     const Text(
-                      'If image could explain me',
+                      'If image could describe me;',
                       style: TextStyle(fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
-                    Container(
+                    SizedBox(
                       height: 150,
                       width: double.infinity,
                       child: Stack(
@@ -288,14 +329,18 @@ class _EditProfileState extends State<EditProfile> {
                             height: 50,
                             width: 50,
                             decoration: const BoxDecoration(
-                                shape: BoxShape.circle, image: DecorationImage(image: AssetImage('images/2.png'))),
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: AssetImage('images/2.png'))),
                           ),
                           Container(
                             height: 70,
                             width: 70,
                             margin: const EdgeInsets.only(left: 40, bottom: 20),
                             decoration: const BoxDecoration(
-                                shape: BoxShape.circle, image: DecorationImage(image: AssetImage('images/1.png'))),
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: AssetImage('images/1.png'))),
                           ),
                           Container(
                             height: 100,
@@ -305,14 +350,18 @@ class _EditProfileState extends State<EditProfile> {
                             ),
                             decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
-                                image: DecorationImage(image: AssetImage('images/Ellipse 654.png'))),
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage('images/Ellipse 654.png'))),
                           ),
                           Container(
                             height: 60,
                             width: 60,
                             margin: const EdgeInsets.only(left: 80, top: 80),
                             decoration: const BoxDecoration(
-                                shape: BoxShape.circle, image: DecorationImage(image: AssetImage('images/5.png'))),
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: AssetImage('images/5.png'))),
                           ),
                         ],
                       ),
@@ -331,13 +380,14 @@ class _EditProfileState extends State<EditProfile> {
                         children: [
                           SvgPicture.asset(
                             'images/Facebook_icon.svg',
+                            color: Colors.blue,
                             height: 20,
                             width: 20,
                           ),
                           const SizedBox(
                             width: 10,
                           ),
-                          const Text("Facebook"),
+                          const Text('Facebook'),
                           const Spacer(),
                           Padding(
                             padding: const EdgeInsets.only(left: 4),
@@ -350,7 +400,7 @@ class _EditProfileState extends State<EditProfile> {
                           const SizedBox(
                             width: 5,
                           ),
-                          const Text("instagram"),
+                          const Text('instagram'),
                         ],
                       ),
                     ),
@@ -360,13 +410,14 @@ class _EditProfileState extends State<EditProfile> {
                         children: [
                           SvgPicture.asset(
                             'images/Twitter_icon.svg',
+                            color: Colors.blue,
                             height: 20,
                             width: 20,
                           ),
                           const SizedBox(
                             width: 10,
                           ),
-                          const Text("Twitter"),
+                          const Text('Twitter'),
                           const Spacer(),
                           SvgPicture.asset(
                             'images/Linkedin_logo.svg',
@@ -376,7 +427,7 @@ class _EditProfileState extends State<EditProfile> {
                           const SizedBox(
                             width: 10,
                           ),
-                          const Text("Linkedin"),
+                          const Text('Linkedin'),
                         ],
                       ),
                     ),
@@ -386,6 +437,7 @@ class _EditProfileState extends State<EditProfile> {
                         children: [
                           SvgPicture.asset(
                             'images/Youtube_icon.svg',
+                            color: Colors.red,
                             fit: BoxFit.cover,
                             height: 20,
                             width: 20,
@@ -393,7 +445,7 @@ class _EditProfileState extends State<EditProfile> {
                           const SizedBox(
                             width: 10,
                           ),
-                          const Text("YouTube"),
+                          const Text('YouTube'),
                           const Spacer(),
                           Padding(
                             padding: const EdgeInsets.only(right: 20),
@@ -404,7 +456,7 @@ class _EditProfileState extends State<EditProfile> {
                               width: 20,
                             ),
                           ),
-                          const Text("TikTok"),
+                          const Text('TikTok'),
                         ],
                       ),
                     ),
@@ -437,15 +489,15 @@ class _EditProfileState extends State<EditProfile> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
                                   Text(
-                                    "Charles",
+                                    'Charles',
                                     style: TextStyle(fontSize: 16),
                                   ),
                                   Text(
-                                    "washington",
+                                    'washington',
                                     style: TextStyle(fontSize: 13),
                                   ),
                                   Text(
-                                    "canada",
+                                    'canada',
                                     style: TextStyle(fontSize: 13),
                                   ),
                                 ],
@@ -458,7 +510,7 @@ class _EditProfileState extends State<EditProfile> {
                                 child: Row(
                                   children: const [
                                     Text(
-                                      "Follow",
+                                      'Follow',
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     SizedBox(
