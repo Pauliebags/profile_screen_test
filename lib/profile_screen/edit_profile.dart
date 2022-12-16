@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -18,6 +19,110 @@ class _EditProfileState extends State<EditProfile> {
   //bool follows = false;
   List<bool>? follows;
   File? image;
+  File? galeryImage;
+  File? downImage;
+  File? stackImage;
+  File? stckImage;
+
+  // function for hyperlink accounts
+
+  launchUrlForInstagram() async {
+    const url = 'https://www.instagram.com/ramzan___ch/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  launchUrlForFacebook() async {
+    const url = 'https://www.facebook.com/ramzan.anwar.56?mibextid=LQQJ4d';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  launchUrlForLinkedin() async {
+    const url = 'https://www.linkedin.com/in/ramzan-ch-2bb2a1192/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  launchUrlForTwiter() async {
+    const url = 'https://twitter.com/Ramzanch056';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  launchUrlForYouTube() async {
+    const url = 'https://www.youtube.com/@EmaanOYaqeenOfficial';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  launchUrlForTikToke() async {
+    const url = 'https://www.tiktok.com/@faaizkhankamalia?_t=8YDatTaQxMn&_r=1';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  Future pickedForStackl() async {
+    final picked = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (picked != null) {
+      setState(() {
+        stckImage = File(picked.path);
+      });
+    } else {
+      return;
+    }
+  }
+
+  Future pickedForStack() async {
+    final picked = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (picked != null) {
+      setState(() {
+        stackImage = File(picked.path);
+      });
+    } else {
+      return;
+    }
+  }
+
+  Future pickedForDownImage() async {
+    final picked = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (picked != null) {
+      setState(() {
+        downImage = File(picked.path);
+      });
+    } else {
+      return;
+    }
+  }
+
+  Future picked() async {
+    final picked = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (picked != null) {
+      setState(() {
+        galeryImage = File(picked.path);
+      });
+    } else {
+      return;
+    }
+  }
 
   Future pickedImage() async {
     final picked = await ImagePicker().pickImage(source: ImageSource.gallery);
@@ -28,6 +133,23 @@ class _EditProfileState extends State<EditProfile> {
     } else {
       return;
     }
+  }
+
+  bool _isEditingText = false;
+  TextEditingController _editingController = TextEditingController();
+  String initialText =
+      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.';
+
+  @override
+  void initState() {
+    super.initState();
+    _editingController = TextEditingController(text: initialText);
+  }
+
+  @override
+  void dispose() {
+    _editingController.dispose();
+    super.dispose();
   }
 
   @override
@@ -54,6 +176,9 @@ class _EditProfileState extends State<EditProfile> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
                             SvgPicture.asset(
@@ -77,7 +202,7 @@ class _EditProfileState extends State<EditProfile> {
                           height: 10,
                         ),
                         const Text(
-                          'Tobin Sydneysmith',
+                          'Robin Sydnesmith',
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -89,7 +214,7 @@ class _EditProfileState extends State<EditProfile> {
                         const Text(
                           'Washington US',
                           style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 16,
                               fontWeight: FontWeight.w300,
                               color: Colors.black),
                         ),
@@ -101,7 +226,7 @@ class _EditProfileState extends State<EditProfile> {
                           color: Colors.blue,
                           alignment: Alignment.center,
                           child: const Text(
-                            'Follow   ^',
+                            'Grade   A',
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
@@ -147,10 +272,7 @@ class _EditProfileState extends State<EditProfile> {
                                 color: Colors.white,
                                 border: Border.all(color: Colors.grey),
                                 shape: BoxShape.circle),
-                            child: const Text(
-                              '34',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
+                            child: const Text('24'),
                           ),
                         ),
                       ],
@@ -165,7 +287,7 @@ class _EditProfileState extends State<EditProfile> {
                           textAlign: TextAlign.end,
                           style: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w400,
                               color: Colors.grey),
                         ),
                         SizedBox(
@@ -175,7 +297,7 @@ class _EditProfileState extends State<EditProfile> {
                           '188 reports',
                           style: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w400,
                               color: Colors.grey),
                         ),
                         SizedBox(
@@ -185,7 +307,7 @@ class _EditProfileState extends State<EditProfile> {
                           '682 Followers',
                           style: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w400,
                               color: Colors.grey),
                         ),
                         SizedBox(
@@ -195,7 +317,7 @@ class _EditProfileState extends State<EditProfile> {
                           '11m likes',
                           style: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w400,
                               color: Colors.grey),
                         ),
                         SizedBox(
@@ -205,7 +327,7 @@ class _EditProfileState extends State<EditProfile> {
                           'Nov, 2021 Member',
                           style: TextStyle(
                               fontSize: 13,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w400,
                               color: Colors.grey),
                         ),
                       ],
@@ -325,7 +447,7 @@ class _EditProfileState extends State<EditProfile> {
                       color: Colors.grey.shade700,
                     ),
                     const Text(
-                      'If image could explain me;',
+                      'If image could explain me',
                       style: TextStyle(fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
@@ -391,7 +513,6 @@ class _EditProfileState extends State<EditProfile> {
                         children: [
                           SvgPicture.asset(
                             'images/Facebook_icon.svg',
-                            color: Colors.blue,
                             height: 20,
                             width: 20,
                           ),
@@ -400,12 +521,17 @@ class _EditProfileState extends State<EditProfile> {
                           ),
                           const Text('Facebook'),
                           const Spacer(),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 4),
-                            child: SvgPicture.asset(
-                              'images/Instagram_logo.svg',
-                              height: 20,
-                              width: 20,
+                          GestureDetector(
+                            onTap: () {
+                              launchUrlForInstagram();
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 4),
+                              child: SvgPicture.asset(
+                                'images/Instagram_logo.svg',
+                                height: 20,
+                                width: 20,
+                              ),
                             ),
                           ),
                           const SizedBox(
@@ -421,7 +547,6 @@ class _EditProfileState extends State<EditProfile> {
                         children: [
                           SvgPicture.asset(
                             'images/Twitter_icon.svg',
-                            color: Colors.blue,
                             height: 20,
                             width: 20,
                           ),
@@ -430,10 +555,15 @@ class _EditProfileState extends State<EditProfile> {
                           ),
                           const Text('Twitter'),
                           const Spacer(),
-                          SvgPicture.asset(
-                            'images/Linkedin_logo.svg',
-                            height: 20,
-                            width: 20,
+                          GestureDetector(
+                            onTap: () {
+                              launchUrlForLinkedin();
+                            },
+                            child: SvgPicture.asset(
+                              'images/Linkedin_logo.svg',
+                              height: 20,
+                              width: 20,
+                            ),
                           ),
                           const SizedBox(
                             width: 10,
@@ -448,7 +578,6 @@ class _EditProfileState extends State<EditProfile> {
                         children: [
                           SvgPicture.asset(
                             'images/Youtube_icon.svg',
-                            color: Colors.red,
                             fit: BoxFit.cover,
                             height: 20,
                             width: 20,
@@ -548,5 +677,41 @@ class _EditProfileState extends State<EditProfile> {
         ),
       ),
     );
+  }
+
+  Widget _editTitleTextField() {
+    if (_isEditingText) {
+      return Center(
+        child: TextField(
+          decoration: const InputDecoration(
+              hintStyle: TextStyle(
+            fontWeight: FontWeight.w500,
+          )),
+          onSubmitted: (newValue) {
+            setState(() {
+              initialText = newValue;
+              _isEditingText = false;
+            });
+          },
+          autofocus: true,
+          controller: _editingController,
+        ),
+      );
+    }
+    return InkWell(
+        onTap: () {
+          setState(() {
+            _isEditingText = true;
+          });
+        },
+        child: Text(
+          initialText,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 15.0,
+            fontWeight: FontWeight.w500,
+          ),
+          textAlign: TextAlign.center,
+        ));
   }
 }

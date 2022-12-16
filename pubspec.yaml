@@ -42,6 +42,7 @@ dependencies:
   percent_indicator: ^4.2.2
   image_picker: ^0.8.6
   flutter_svg: ^1.1.6
+  url_launcher: ^6.1.7
 
 dev_dependencies:
   flutter_test:
@@ -68,17 +69,17 @@ flutter:
   # To add assets to your application, add an assets section, like this:
 
   assets:
-   - images/
-   - assets/
-#   assets\Flag_Icon_Enhanced_Profile.svg
-#   assets\Instagram_logo.svg
-#   assets\Linkedin_logo.svg
-#   assets\Pinterest_logo.svg
-#   assets\Profile_Image_Circle_Icon_Enhanced_Profile.svg
-#   assets\Snapchat_icon.svg
-#   assets\TikTok_logo.svg
-#   assets\Twitter_icon.svg
-#   assets\Youtube_icon.svg
+    - images/
+    - assets/
+  #   assets\Flag_Icon_Enhanced_Profile.svg
+  #   assets\Instagram_logo.svg
+  #   assets\Linkedin_logo.svg
+  #   assets\Pinterest_logo.svg
+  #   assets\Profile_Image_Circle_Icon_Enhanced_Profile.svg
+  #   assets\Snapchat_icon.svg
+  #   assets\TikTok_logo.svg
+  #   assets\Twitter_icon.svg
+  #   assets\Youtube_icon.svg
 
   #   - images/a_dot_ham.jpeg
 

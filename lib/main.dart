@@ -39,6 +39,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     // const ProfilePage()
   ];
   int selectIndex = 0;
+
   void onPageChanged(int index) {
     setState(() {
       selectIndex = index;
