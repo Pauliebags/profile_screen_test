@@ -36,7 +36,7 @@ class UserScreen extends StatelessWidget {
                               'images/Flag_Icon.svg',
                               color: Colors.redAccent,
                               height: 70,
-                              width: 70,
+                              width: 80,
                             ),
                             const SizedBox(
                               width: 10,
@@ -45,7 +45,7 @@ class UserScreen extends StatelessWidget {
                               'images/Flag_Icon.svg',
                               color: Colors.indigo,
                               height: 70,
-                              width: 70,
+                              width: 80,
                             ),
                           ],
                         ),
@@ -141,7 +141,7 @@ class UserScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: const [
                         Text(
-                          'Top 10\nTrending Story',
+                          '   \n   \nTop 10\nTrending Story',
                           textAlign: TextAlign.end,
                           style: TextStyle(
                               fontSize: 16,
@@ -222,40 +222,45 @@ class UserScreen extends StatelessWidget {
                         SizedBox(),
                       ],
                     ),
-                    const Divider(
+                    Divider(
                       thickness: 2,
+                      color: Colors.grey.shade700,
                     ),
                     const Text(
-                      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                      textAlign: TextAlign.center,
+                      "I feel that opinions in the news often get confused with facts. Opinions are a form of speculation and an overused part of today's narratives that often sensationalizes the unknown events.",
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                      textAlign: TextAlign.left,
                     ),
-                    const Divider(
+                    Divider(
                       thickness: 2,
+                      color: Colors.grey.shade700,
                     ),
                     const Text(
                       'If images could describe me;',
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
-                      height: 150,
+                      height: 120,
                       width: double.infinity,
                       child: Stack(
                         alignment: Alignment.centerLeft,
                         children: [
                           Container(
-                            height: 50,
-                            width: 50,
+                            height: 60,
+                            width: 60,
+                            margin: const EdgeInsets.only(left: 30, top: 70),
                             decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
                                     image: AssetImage('images/2.png'))),
                           ),
                           Container(
-                            height: 70,
-                            width: 70,
-                            margin: const EdgeInsets.only(left: 40, bottom: 20),
+                            height: 80,
+                            width: 80,
+                            margin: const EdgeInsets.only(left: 60, bottom: 30),
                             decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
@@ -265,7 +270,7 @@ class UserScreen extends StatelessWidget {
                             height: 100,
                             width: 100,
                             margin: const EdgeInsets.only(
-                              left: 110,
+                              left: 150,
                             ),
                             decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
@@ -276,7 +281,7 @@ class UserScreen extends StatelessWidget {
                           Container(
                             height: 60,
                             width: 60,
-                            margin: const EdgeInsets.only(left: 80, top: 80),
+                            margin: const EdgeInsets.only(left: 110, top: 70),
                             decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
@@ -285,8 +290,9 @@ class UserScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Divider(
+                    Divider(
                       thickness: 2,
+                      color: Colors.grey.shade700,
                     ),
                     const Text(
                       'My social Media links:',
@@ -379,8 +385,9 @@ class UserScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Divider(
+                    Divider(
                       thickness: 2,
+                      color: Colors.grey.shade700,
                     ),
                     const Text(
                       'Who do i follow on purified?',
@@ -485,7 +492,7 @@ class NavigationDrawer extends StatelessWidget {
           CircleAvatar(
             radius: 52,
             backgroundImage: NetworkImage(
-              'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+              'images/Profile Pic.png',
             ),
           ),
           SizedBox(height: 12),

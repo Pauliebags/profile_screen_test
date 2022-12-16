@@ -34,6 +34,14 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          leading: const BackButton(),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          iconTheme: const IconThemeData(color: Colors.black),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: ListView(
@@ -303,19 +311,21 @@ class _EditProfileState extends State<EditProfile> {
                         SizedBox(),
                       ],
                     ),
-                    const Divider(
+                    Divider(
                       thickness: 2,
+                      color: Colors.grey.shade700,
                     ),
                     const Text(
                       'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
                       style: TextStyle(fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
-                    const Divider(
+                    Divider(
                       thickness: 2,
+                      color: Colors.grey.shade700,
                     ),
                     const Text(
-                      'If image could describe me;',
+                      'If image could explain me;',
                       style: TextStyle(fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
@@ -366,8 +376,9 @@ class _EditProfileState extends State<EditProfile> {
                         ],
                       ),
                     ),
-                    const Divider(
+                    Divider(
                       thickness: 2,
+                      color: Colors.grey.shade700,
                     ),
                     const Text(
                       'My social Media links:',
@@ -460,8 +471,9 @@ class _EditProfileState extends State<EditProfile> {
                         ],
                       ),
                     ),
-                    const Divider(
+                    Divider(
                       thickness: 2,
+                      color: Colors.grey.shade700,
                     ),
                     const Text(
                       'Who do i follow on purified?',
